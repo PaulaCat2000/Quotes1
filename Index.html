@@ -1,0 +1,44 @@
+<div style="font-family: Arial, sans-serif; text-align: center; padding: 20px;">
+    <h1>Generador de Frases Motivacionales</h1>
+    <p>Haz clic en el botón para recibir inspiración.</p>
+    <div style="font-size: 1.5em; font-weight: bold; margin: 20px 0;" id="quote">Tu frase aparecerá aquí.</div>
+    <img id="quoteImage" src="" alt="Imagen motivacional" style="max-width: 100%; height: auto; display: none; margin: 20px 0; border-radius: 10px;">
+    <button style="background-color: #4CAF50; color: white; border: none; padding: 10px 20px; font-size: 1em; cursor: pointer; border-radius: 5px;" onclick="generateQuote()">Generar Frase</button>
+    <script>
+        const quotes = [
+            {
+                text: "El éxito es la suma de pequeños esfuerzos repetidos cada día.",
+                image: "https://gumroad.com/l/producto1/imagen1.jpg"
+            },
+            {
+                text: "Cree en ti mismo y todo será posible.",
+                image: "https://gumroad.com/l/producto2/imagen2.jpg"
+            },
+            {
+                text: "La acción es el puente entre los sueños y la realidad.",
+                image: "https://gumroad.com/l/producto3/imagen3.jpg"
+            },
+            {
+                text: "Los grandes logros comienzan con pequeños pasos.",
+                image: "https://gumroad.com/l/producto4/imagen4.jpg"
+            },
+            {
+                text: "Cada día es una nueva oportunidad para crecer.",
+                image: "https://gumroad.com/l/producto5/imagen5.jpg"
+            }
+        ];
+
+        function generateQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            const quote = quotes[randomIndex];
+
+            // Actualizar texto de la frase
+            document.getElementById('quote').innerText = quote.text;
+
+            // Actualizar imagen asociada
+            const imgElement = document.getElementById('quoteImage');
+            imgElement.src = quote.image;
+            imgElement.style.display = "block";
+        }
+    </script>
+</div>
